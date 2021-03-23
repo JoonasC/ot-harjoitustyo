@@ -1,0 +1,103 @@
+commit 3a8ee09c68ac8fb8634a24978a6bc4016136ee52
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 16:17:50 2021 +0200
+
+    muutettiin tiedostoja
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 04fbbec9f12b1a8b2ab4015a0a30cb31601c42f9
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 16:13:02 2021 +0200
+
+    lisättiin tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit e74b2bf09443420746bfc907ed32b5286d73f951
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 16:02:55 2021 +0200
+
+    muokattiin eka.txt ja kolmas.txt tiedostoja
+
+ eka.txt    | 2 +-
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 1e51990ab34e1fd81559265831fd417544dc0e2c
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 16:00:40 2021 +0200
+
+    uudelleennimettiin tiedosto.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 873a4d5612e151e5ae6821bf011ba1905194f080
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:59:10 2021 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 77048867ff4b80c46f00f3afe9136305102c9146
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:58:16 2021 +0200
+
+    poistettiin ja lisättiin tekstiä tiedosto.txt:n
+
+ tiedosto.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 033424b3b966e1a986690ba36fe01d94a7b40184
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:56:18 2021 +0200
+
+    lisättiin tekstiä tiedosto.txt:n
+
+ tiedosto.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit f532f16a5a1fcaa8a044b6de822c1b879290b548
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:44:13 2021 +0200
+
+    stuff ja tiedosto luotu
+
+ stuff/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 81caef7a7fe76365373b25068ee3a4687fe2129c
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:42:51 2021 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9a1572cadd522c4f28d45892218fa0194a4eb8ff
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:41:18 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit be880aae3f40d7f8d1d6bbad9ff92c6e2e8fc176
+Author: Joonas Coatanea <jcoatanea@protonmail.com>
+Date:   Tue Mar 23 15:34:52 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
