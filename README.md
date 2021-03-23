@@ -1,4 +1,4 @@
-# Ohjelmistotekniikka, harjoitustyö - Joonas Coatanea
+# Ohjelmistotekniikka 2021, harjoitustyö - Joonas Coatanea
 
 ## Tehtävät
 
