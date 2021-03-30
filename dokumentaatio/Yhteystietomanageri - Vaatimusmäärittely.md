@@ -14,7 +14,7 @@ Sovelluksessa tulee olemaan vain yksi käyttäjärooli - normaali käyttäjä.
 
 ## Käyttöliittymä luonnos
 
-![](/home/joonas/Documents/Uni/Programming technique/ot-harjoitustyö/dokumentaatio/kuvat/Käyttöliittymä-luonnos.jpg)
+![](https://raw.githubusercontent.com/JoonasC/ot-harjoitustyo/master/dokumentaatio/kuvat/K%C3%A4ytt%C3%B6liittym%C3%A4-luonnos.jpg)
 
 Sovellus avautuu kirjautumisnäkymään, josta voi siirtyä uuden käyttäjän luomisnäkymään tai kirjautumalla sisään päänäkymään. Päänäkymässä voi lisää kontakti / muokkaa kontaktia nappeja painamalla siirtyä kontaktin lisäys / muokkaus näkymään, mistä voi siirtyä takaisin päänäkymään, kun kontakti on lisätty tai muokattu.
 
