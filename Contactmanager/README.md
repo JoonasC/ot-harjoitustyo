@@ -24,7 +24,7 @@ Testit voi suorittaa komennolla `./gradlew test`
 
 ### Jacoco
 
-Jacoco testikattavuuden voi luoda komennolla `./gradlew jacocoTestReport`
+Jacoco testikattavuuden voi luoda komennolla `./gradlew test jacocoTestReport`
 
 
 
