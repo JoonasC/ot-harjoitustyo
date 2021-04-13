@@ -19,3 +19,15 @@
 [Unicafe](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe)
 
 [Kattavuusraportti.png](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
+
+
+
+### Viikko 3
+
+[Harjoitustyö](https://github.com/JoonasC/ot-harjoitustyo/blob/master/Contactmanager)
+
+[Luokkakaavio](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/Luokkakaavio.png)
+
+[Sekvenssikaavio (Kone)](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/Kone-Sekvenssikaavio.png)
+
+[Sekvenssikaavio (HSL)](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/HSL-Sekvenssikaavio.png)
