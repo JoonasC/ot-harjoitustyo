@@ -1,21 +1,23 @@
 package views;
 
 import controllers.LoginController;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import models.LoginModel;
 import routing.Router;
 
+import java.util.Map;
+
 public class LoginView extends View<LoginController, LoginModel> {
     private final Label errorLabel;
     private final TextField usernameTextField;
-    private final Button loginButton;
-    private final Button createUserButton;
     private final Scene scene;
 
     public LoginView(Router router) {
@@ -24,22 +26,38 @@ public class LoginView extends View<LoginController, LoginModel> {
         errorLabel = new Label();
         errorLabel.setVisible(false);
         errorLabel.setTextFill(Color.RED);
+        Label usernameLabel = new Label("Username");
         usernameTextField = new TextField();
-        loginButton = new Button("Login");
-        createUserButton = new Button("Create user");
+        Button loginButton = new Button("Login");
+        Button createUserButton = new Button("Create user");
+        HBox loginButtonContainer = new HBox(
+                loginButton
+        );
+        loginButtonContainer.setAlignment(Pos.CENTER);
+        HBox createUserButtonContainer = new HBox(
+                createUserButton
+        );
+        createUserButtonContainer.setAlignment(Pos.CENTER);
+        VBox mainContainer = new VBox(
+                errorLabel,
+                usernameLabel,
+                usernameTextField,
+                loginButtonContainer,
+                createUserButtonContainer
+        );
+        mainContainer.setSpacing(2);
+        mainContainer.setPadding(new Insets(10));
         scene = new Scene(
-                new VBox(
-                        errorLabel,
-                        new Label("Username"),
-                        usernameTextField,
-                        loginButton,
-                        createUserButton
-                )
+                mainContainer
         );
 
-        loginButton.setOnMouseClicked(event -> {
-            controller.login(usernameTextField.getText());
-        });
+        loginButton.setOnMouseClicked(event -> controller.login(usernameTextField.getText()));
+    }
+
+    @Override
+    public void setModel(LoginModel loginModel) {
+        super.setModel(loginModel);
+        router.setLoginModel(loginModel);
     }
 
     @Override
@@ -54,12 +72,21 @@ public class LoginView extends View<LoginController, LoginModel> {
 
     @Override
     public int getWindowHeight() {
-        return 400;
+        return 200;
     }
 
     @Override
     public Scene getScene() {
         return scene;
+    }
+
+    @Override
+    public void onNavigateTo(Map<String, Object> arguments) {
+        if (arguments.containsKey("loggedOut")) {
+            if ((Boolean) arguments.get("loggedOut")) {
+                controller.logout();
+            }
+        }
     }
 
     @Override
@@ -70,10 +97,7 @@ public class LoginView extends View<LoginController, LoginModel> {
         if (model.isLoggedIn()) {
             usernameTextField.clear();
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Login successful");
-            alert.show();
-            // TODO: Switch to main page
+            router.navigateTo(MainView.class, Map.of("loggedInUsername", model.getLoggedInUsername()));
         }
     }
 }

@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import models.Model;
 import routing.Router;
 
+import java.util.Map;
+
 public abstract class View<C extends Controller<?>, M extends Model<?>> {
     protected Router router;
     protected C controller;
@@ -29,6 +31,8 @@ public abstract class View<C extends Controller<?>, M extends Model<?>> {
     public abstract int getWindowHeight();
 
     public abstract Scene getScene();
+
+    public abstract void onNavigateTo(Map<String, Object> arguments);
 
     public abstract void render();
 }
