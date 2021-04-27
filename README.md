@@ -28,6 +28,20 @@ Jacoco testikattavuuden voi luoda komennolla `./gradlew test jacocoTestReport`
 
 
 
+### Checkstyle
+
+Checkstylen voi suorittaa komennolla `./gradlew check`
+
+
+
+### Ohjelman kompilointi
+
+Ohjelman voi kompiloida suoritettavaksi jar-tiedostoksi komennolla `./gradlew shadowJar`
+
+Jar tiedosto sijoitetaan `/build/libs` kansioon
+
+
+
 ## Ohjelman konfiguraatio
 
 Data tallennetaan oletuksena käyttäjän kotihakemistoon "Contactmanager" kansion alle. Tämän voi muuttaa `contactmanager-datadir` ympäristömuuttujalla.
