@@ -17,3 +17,5 @@ Ohjelman pakkausrakenne on seuraavanlainen:
 ## Päätoiminnallisuudet
 
 ### Sisäänkirjautuminen
+
+![](https://raw.githubusercontent.com/JoonasC/ot-harjoitustyo/master/dokumentaatio/kuvat/Sis%C3%A4%C3%A4nkirjautumis-sekvenssikaavio.png)
