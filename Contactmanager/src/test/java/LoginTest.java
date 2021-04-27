@@ -28,6 +28,7 @@ public class LoginTest {
         model = new LoginModel();
         controller.setModel(model);
 
+        controller.mock();
         model.mock();
     }
 

@@ -17,10 +17,12 @@ public class MainController extends Controller<MainModel> {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private Contact mockContact;
+    private Contact mockEditContact;
 
-    public void mock(Contact mockContact) {
+    public void mock(Contact mockContact, Contact mockEditContact) {
         super.mock();
         this.mockContact = mockContact;
+        this.mockEditContact = mockEditContact;
     }
 
     private void saveContacts() throws IOException {
@@ -64,7 +66,7 @@ public class MainController extends Controller<MainModel> {
             ContactDialog contactDialog = new ContactDialog(contact);
             newContact = contactDialog.showAndWait();
         } else {
-            newContact = Optional.of(mockContact);
+            newContact = Optional.of(mockEditContact);
         }
 
         if (newContact.isPresent()) {

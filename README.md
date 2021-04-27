@@ -1,33 +1,33 @@
-# Ohjelmistotekniikka 2021, harjoitustyö - Joonas Coatanea
+# Yhteystietomanageri
 
-## Tehtävät
+**Huom:** Vaatimusmäärittelyssä oli määritelty, että sisäänkirjautumiseen tarvitaan salasana, mutta päätin että se ei ollut lopuksi hyödyllinen. Tästä syystä sisäänkirjautuminen tulee vaatimaan vain käyttäjänimen.
 
-### Viikko 1
+Yhteystietomanagerin avulla pystyy pitämään kirjaa omista yhteystiedoistaan (Ihmisen nimi, puhelinnumero ja sähköpostiosoite).
 
-[gitlog.txt](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Sovellus on suunniteltu käyttäen Java 11:ta.
 
 
 
-### Viikko 2
+## Ohjelman käyttö
 
-**Huom: Maksukortti tehtävässä on käytetty Mavenin sijaan Gradlea, testit voidaan suorittaa komennolla** `./gradlew test`
+### Käynnistäminen
 
-[Maksukortti](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko2/Maksukortti)
-
-[Unicafe](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe)
-
-[Kattavuusraportti.png](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
+Ohjelman voi käynnistää komennolla `./gradlew run`
 
 
 
-### Viikko 3
+### Testaus
 
-[Harjoitustyö](https://github.com/JoonasC/ot-harjoitustyo/blob/master/Contactmanager)
+Testit voi suorittaa komennolla `./gradlew test`
 
-[Luokkakaavio](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/Luokkakaavio.png)
 
-[Sekvenssikaavio (Kone)](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/Kone-Sekvenssikaavio.png)
 
-[Sekvenssikaavio (HSL)](https://github.com/JoonasC/ot-harjoitustyo/blob/master/laskarit/viikko3/HSL-Sekvenssikaavio.png)
+### Jacoco
+
+Jacoco testikattavuuden voi luoda komennolla `./gradlew test jacocoTestReport`
+
+
+
+## Ohjelman konfiguraatio
+
+Data tallennetaan oletuksena käyttäjän kotihakemistoon "Contactmanager" kansion alle. Tämän voi muuttaa `contactmanager-datadir` ympäristömuuttujalla.
