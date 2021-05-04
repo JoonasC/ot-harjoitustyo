@@ -10,11 +10,11 @@ Sovellus on suunniteltu käyttäen Java 11:ta.
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely](https://github.com/JoonasC/ot-harjoitustyo/blob/viikko5/dokumentaatio/Yhteystietomanageri%20-%20Vaatimusm%C3%A4%C3%A4rittely.md)
+[Vaatimusmäärittely](https://github.com/JoonasC/ot-harjoitustyo/blob/master/dokumentaatio/Yhteystietomanageri%20-%20Vaatimusm%C3%A4%C3%A4rittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/JoonasC/ot-harjoitustyo/blob/viikko5/dokumentaatio/Arkkitehtuurikuvaus.md)
+[Arkkitehtuurikuvaus](https://github.com/JoonasC/ot-harjoitustyo/blob/master/dokumentaatio/Arkkitehtuurikuvaus.md)
 
-[Tuntikirjanpito](https://github.com/JoonasC/ot-harjoitustyo/blob/viikko5/dokumentaatio/Tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/JoonasC/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
 
 
 
