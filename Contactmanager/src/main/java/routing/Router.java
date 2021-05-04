@@ -1,12 +1,15 @@
 package routing;
 
 import controllers.Controller;
+import controllers.CreateUserController;
 import controllers.LoginController;
 import controllers.MainController;
 import javafx.stage.Stage;
+import models.CreateUserModel;
 import models.LoginModel;
 import models.MainModel;
 import models.Model;
+import views.CreateUserView;
 import views.LoginView;
 import views.MainView;
 import views.View;
@@ -29,6 +32,7 @@ public class Router {
         this.mainStage = mainStage;
 
         instantiateViewsControllersAndModels(LoginView.class, LoginController.class, LoginModel.class);
+        instantiateViewsControllersAndModels(CreateUserView.class, CreateUserController.class, CreateUserModel.class);
         instantiateViewsControllersAndModels(MainView.class, MainController.class, MainModel.class);
 
         navigateTo(LoginView.class, Map.of());

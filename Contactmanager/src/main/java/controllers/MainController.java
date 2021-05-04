@@ -8,7 +8,9 @@ import javafx.scene.control.Alert;
 import models.MainModel;
 import utils.PathUtils;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Optional;
 import java.util.Set;
@@ -30,6 +32,13 @@ public class MainController extends Controller<MainModel> {
     }
 
     public void loadContacts() throws IOException {
+        if (!Paths.get(PathUtils.getDataDir().toString(), model.getLoggedInUsername(), "contacts.json").toFile().exists()) {
+            Files.createFile(Paths.get(PathUtils.getDataDir().toString(), model.getLoggedInUsername(), "contacts.json"));
+            FileWriter fileWriter = new FileWriter(Paths.get(PathUtils.getDataDir().toString(), model.getLoggedInUsername(), "contacts.json").toString());
+            fileWriter.write("[]");
+            fileWriter.close();
+        }
+
         Set<Contact> loadedContacts = objectMapper
                 .readValue(
                         Paths.get(

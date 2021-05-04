@@ -26,4 +26,8 @@ public class LoginController extends Controller<LoginModel> {
         model.setErrorMessage("");
         model.renderView();
     }
+
+    public void exit() {
+        model.setErrorMessage("");
+    }
 }

@@ -24,3 +24,11 @@ javafx {
     version = '16'
     modules = ['javafx.controls']
 }
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['views/*', 'dialogs/*', 'utils/*'])
+        }))
+    }
+}

@@ -1,6 +1,6 @@
 package views;
 
-import controllers.LoginController;
+import controllers.CreateUserController;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,17 +10,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import models.LoginModel;
+import models.CreateUserModel;
 import routing.Router;
 
+import java.io.IOException;
 import java.util.Map;
 
-public class LoginView extends View<LoginController, LoginModel> {
+public class CreateUserView extends View<CreateUserController, CreateUserModel> {
     private final Label errorLabel;
     private final TextField usernameTextField;
     private final Scene scene;
 
-    public LoginView(Router router) {
+    public CreateUserView(Router router) {
         super(router);
 
         errorLabel = new Label();
@@ -28,22 +29,22 @@ public class LoginView extends View<LoginController, LoginModel> {
         errorLabel.setTextFill(Color.RED);
         Label usernameLabel = new Label("Username");
         usernameTextField = new TextField();
-        Button loginButton = new Button("Login");
         Button createUserButton = new Button("Create user");
-        HBox loginButtonContainer = new HBox(
-                loginButton
-        );
-        loginButtonContainer.setAlignment(Pos.CENTER);
+        Button cancelButton = new Button("Cancel");
         HBox createUserButtonContainer = new HBox(
                 createUserButton
         );
         createUserButtonContainer.setAlignment(Pos.CENTER);
+        HBox cancelButtonContainer = new HBox(
+                cancelButton
+        );
+        cancelButtonContainer.setAlignment(Pos.CENTER);
         VBox mainContainer = new VBox(
                 errorLabel,
                 usernameLabel,
                 usernameTextField,
-                loginButtonContainer,
-                createUserButtonContainer
+                createUserButtonContainer,
+                cancelButtonContainer
         );
         mainContainer.setSpacing(2);
         mainContainer.setPadding(new Insets(10));
@@ -51,24 +52,24 @@ public class LoginView extends View<LoginController, LoginModel> {
                 mainContainer
         );
 
-        loginButton.setOnMouseClicked(event -> controller.login(usernameTextField.getText()));
         createUserButton.setOnMouseClicked(event -> {
+            try {
+                controller.createUser(usernameTextField.getText());
+            } catch (IOException exc) {
+                exc.printStackTrace();
+            }
+        });
+        cancelButton.setOnMouseClicked(event -> {
             controller.exit();
             usernameTextField.clear();
             render();
-            router.navigateTo(CreateUserView.class, Map.of());
+            router.navigateTo(LoginView.class, Map.of());
         });
     }
 
     @Override
-    public void setModel(LoginModel loginModel) {
-        super.setModel(loginModel);
-        router.setLoginModel(loginModel);
-    }
-
-    @Override
     public String getWindowTitleSuffix() {
-        return "Login";
+        return "Create user";
     }
 
     @Override
@@ -88,11 +89,6 @@ public class LoginView extends View<LoginController, LoginModel> {
 
     @Override
     public void onNavigateTo(Map<String, Object> arguments) {
-        if (arguments.containsKey("loggedOut")) {
-            if ((Boolean) arguments.get("loggedOut")) {
-                controller.logout();
-            }
-        }
     }
 
     @Override
@@ -100,11 +96,11 @@ public class LoginView extends View<LoginController, LoginModel> {
         errorLabel.setText(model.getErrorMessage());
         errorLabel.setVisible(!model.getErrorMessage().isEmpty());
 
-        if (model.isLoggedIn()) {
+        if (model.isUserCreated()) {
             controller.exit();
             usernameTextField.clear();
 
-            router.navigateTo(MainView.class, Map.of("loggedInUsername", model.getLoggedInUsername()));
+            router.navigateTo(LoginView.class, Map.of());
         }
     }
 }
