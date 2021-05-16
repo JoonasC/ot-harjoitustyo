@@ -44,6 +44,12 @@ Checkstylen voi suorittaa komennolla `./gradlew check`
 
 
 
+### Javadoc
+
+Javadocin voi generoida komennolla `./gradlew javadoc`
+
+
+
 ### Ohjelman kompilointi
 
 Ohjelman voi kompiloida suoritettavaksi jar-tiedostoksi komennolla `./gradlew shadowJar`
