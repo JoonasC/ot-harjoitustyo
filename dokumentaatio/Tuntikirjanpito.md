@@ -7,4 +7,6 @@
 | 16.4      | 3        | Pääsivun toteutus, pääsivun testauksen aloittaminen          |
 | 27.4      | 3        | Pääsivun testauksen loppuunvienti, checkstylen alustava konfiguraatio, arkkitehtuuri dokumentin luonti ja sisäänkirjautumista kuvaava sekvenssikaavio |
 | 28.4      | 1        | Ohjelman kompilaation toteutus, READMEN päivitys             |
+| 4.5       | 4        | Käyttäjänluontisivun implementointi                          |
+| 15.5      | 4        | Testien viimeistely, käyttäjäsyötteen tarkisus, muut loppusilaukset |
 
