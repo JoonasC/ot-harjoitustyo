@@ -72,3 +72,31 @@ Tietojen tallennuksesta ja lataamisesta huolehtivat sivujen ohjaajat. Yhteystied
 ![](https://raw.githubusercontent.com/JoonasC/ot-harjoitustyo/master/dokumentaatio/kuvat/Sis%C3%A4%C3%A4nkirjautumis-sekvenssikaavio.png)
 
 **Huom:** Ylläolevassa sekvenssikaaviossa on pieni virhe, `Router` ei pyydä `MainModelilta` kontakteja, `MainView` pyytää.
+
+Sisäänkirjautuessa, sisäänkirjautumissivun ohjaaja tarkistaa onko halutun käyttäjän käyttäjänimi olemassa, ja jos se on olemassa se asettaa sisäänkirjautumissivun mallissa tiedon siitä, että käyttäjä on sisäänkirjautunut sekä siitä mikä sisäänkirjautuneen käyttäjän nimi on. Tämän jälkeen sisäänkirjautumissivun näkymä tarkistaa mallista onko käyttäjä sisäänkirjautunut, ja vaihtaa sivun pääsivuun reitittäjän avulla.
+
+
+
+### Käyttäjän luominen
+
+Luodessa käyttäjää, käyttäjänluomissivun ohjaaja tarkistaa onko halutun käyttäjän käyttäjänimi jo olemasssa, ja jos se ei ole jo olemassa se asettaa käyttäjänluomissivun mallissa tiedon siitä, että käyttäjä on luotu. Tämän jälkeen käyttäjänluomissivun näkymä tarkistaa mallista onko käyttäjä luotu, ja vaihtaa sivun kirjautumissivuun reitittäjän avulla.
+
+
+
+### Yhteytiedon luominen, muokkaaminen ja poistaminen
+
+Luodessa, muokatessa tai poistaessa yhteystietoa, pääsivun ohjaaja tekee tarvittavat toimenpiteet (esim. Avaa ponnahdusikkunan jos kyse on yhteystiedon luomisesta tai muokkaamisesta) ja muokkaa yhteystietojen joukkoa sekä tallentaa muokatun yhteystietojen joukon tiedostoon. Tämän jälkeen pääsivun näkymä päivittää yhteystietojen listan.
+
+
+
+## Ohjelman arkkitehtuuriin jääneet heikkoudet
+
+### Testaus
+
+Mock-logiikan rakentaminen suoraan mallien ja ohjaajien sisään oli virhe, koska tällöin mockaus-logiikkassa itsessään voi olla vikoja, eikä sitä pysty testaamaan. Mock-kirjaston käyttäminen olisi ollut parempi valinta.
+
+
+
+### Datan hallinta
+
+Datan keskittäminen ainoastaan ohjaajiin ja malleihin oli virhe, koska se tekee datan jakamisesta eri sivujen ohjaajien ja mallien välillä vaikeata. DAO-mallin käyttäminen olisi ollut parempi valinta.

@@ -16,6 +16,11 @@ import routing.Router;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * View for the create user page
+ *
+ * @author Joonas Coatanea
+ */
 public class CreateUserView extends View<CreateUserController, CreateUserModel> {
     private final Label errorLabel;
     private final TextField usernameTextField;
@@ -27,6 +32,7 @@ public class CreateUserView extends View<CreateUserController, CreateUserModel> 
         errorLabel = new Label();
         errorLabel.setVisible(false);
         errorLabel.setTextFill(Color.RED);
+        errorLabel.setWrapText(true);
         Label usernameLabel = new Label("Username");
         usernameTextField = new TextField();
         Button createUserButton = new Button("Create user");

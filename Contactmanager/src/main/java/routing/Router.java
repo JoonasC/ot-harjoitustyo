@@ -17,6 +17,11 @@ import views.View;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
+/**
+ * A class that provides features that allow switching between pages (routing)
+ *
+ * @author Joonas Coatanea
+ */
 public class Router {
     private final Stage mainStage;
 
@@ -38,6 +43,12 @@ public class Router {
         navigateTo(LoginView.class, Map.of());
     }
 
+    /**
+     * Switches to the view of a page and allows passing arguments to the view
+     *
+     * @param viewClass The class of the view to switch to
+     * @param arguments Arguments that will be passed to the view to switch to
+     */
     public void navigateTo(Class<?> viewClass, Map<String, Object> arguments) {
         if (!viewClass.getSuperclass().getCanonicalName().equals(View.class.getCanonicalName())) {
             throw new IllegalArgumentException("Router can only navigate to views");
@@ -54,6 +65,11 @@ public class Router {
         }
     }
 
+    /**
+     * Renders a view
+     *
+     * @param view The view to render
+     */
     private void renderView(View<Controller<?>, Model<?>> view) {
         view.render();
 
@@ -66,6 +82,17 @@ public class Router {
         mainStage.show();
     }
 
+    /**
+     * Instantiates the view, controller and model of a page
+     *
+     * @param view       The view to instantiate
+     * @param controller The controller to instantiate
+     * @param model      The model to instantiate
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     @SuppressWarnings("unchecked")
     private void instantiateViewsControllersAndModels(Class<?> view, Class<?> controller, Class<?> model) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         View<Controller<?>, Model<?>> viewInstance = (View<Controller<?>, Model<?>>) view.getConstructor(this.getClass()).newInstance(this);
@@ -82,6 +109,12 @@ public class Router {
         models.add(modelInstance);
     }
 
+    /**
+     * Sets the login page's model for the router to use.
+     * Used for checking if a user is logged in, and enforcing access restrictions on protected pages
+     *
+     * @param loginModel The login model to set
+     */
     public void setLoginModel(LoginModel loginModel) {
         this.loginModel = loginModel;
     }

@@ -15,6 +15,11 @@ import routing.Router;
 
 import java.util.Map;
 
+/**
+ * View for the login page
+ *
+ * @author Joonas Coatanea
+ */
 public class LoginView extends View<LoginController, LoginModel> {
     private final Label errorLabel;
     private final TextField usernameTextField;

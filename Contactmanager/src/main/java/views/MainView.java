@@ -16,6 +16,11 @@ import routing.Router;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * View for main page
+ *
+ * @author Joonas Coatanea
+ */
 public class MainView extends View<MainController, MainModel> {
     private final TableView<Contact> table;
     private final Scene scene;

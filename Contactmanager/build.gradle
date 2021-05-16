@@ -26,9 +26,12 @@ javafx {
 }
 
 jacocoTestReport {
+    reports {
+        html.enabled(true)
+    }
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ['views/*', 'dialogs/*', 'utils/*'])
+            fileTree(dir: it, exclude: ['default/*', 'views/*', 'dialogs/*', 'routing/*'])
         }))
     }
 }

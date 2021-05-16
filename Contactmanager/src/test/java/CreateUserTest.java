@@ -45,7 +45,7 @@ public class CreateUserTest {
         Files.createDirectory(testUserPath);
 
         controller.createUser("test");
-        assertEquals(model.getErrorMessage(), "Username is taken");
+        assertEquals(model.getErrorMessage(), "Username is already taken");
     }
 
     @Test

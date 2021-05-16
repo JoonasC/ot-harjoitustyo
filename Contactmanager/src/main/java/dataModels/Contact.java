@@ -6,6 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
+/**
+ * A class that represents a contact
+ *
+ * @author Joonas Coatanea
+ */
 public class Contact {
     private final String name;
     private final String phoneNumber;
@@ -22,16 +27,31 @@ public class Contact {
         this.email = email;
     }
 
+    /**
+     * Gets the contact's name
+     *
+     * @return The contact's name
+     */
     @JsonGetter("name")
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the contacts phone number
+     *
+     * @return The contact's phone number
+     */
     @JsonGetter("phoneNumber")
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
+    /**
+     * Gets the contact's email
+     *
+     * @return The contact's email
+     */
     @JsonGetter("email")
     public String getEmail() {
         return email;
